@@ -1,4 +1,3 @@
-﻿function update-VMHost{
 Param(
 [Parameter(Mandatory=$True)]
 [string]$VCenterIP,
@@ -8,6 +7,8 @@ Param(
 [Parameter(Mandatory=$True)]
 [string]$UandP= "True"
 )
+function update-VMHost{
+
 Begin{
 Write-Host "Start Stage 1 of Upgrade Process"
 If ($UandP -eq "True"){
@@ -60,3 +61,4 @@ $vmlist2=Get-VM -Location $StartingIP | select name
     Write-Host "Stage 3 is Complete (3/3)"
 }
 }
+update-VMHost
